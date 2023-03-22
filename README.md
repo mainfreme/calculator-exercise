@@ -4,6 +4,7 @@
 Aplikacja posiada pierwszą wersję funkcjonalności, jaką jest obliczenie wyników kredytu hipotecznego dla podanych parametrów.
 
 Użytkownik, wywołując endpoint GET `/api/mortgage` z parametrami:
+
 * creditValue - wartość kredytu, (wartość liczbowa w PLN, pole wymagane)
 * secureValue - wartość zabezpieczenia, (wartość liczbowa w PLN, pole wymagane)
 * age - wiek kredytobiorcy (wartość liczbowa w latach, pole wymagane)
@@ -12,11 +13,14 @@ Użytkownik, wywołując endpoint GET `/api/mortgage` z parametrami:
 * period - okres kredytowania w miesiącach, (wartość liczbowa, pole wymagane)
 * email - pole opcjonalne, na który wysyłany jest email z obliczeniami
 
+
 otrzymuje w odpowiedzi:
+
 * initialCostValue - koszt początkowy (wartość liczbowa w PLN)
 * installmentValue - wysokość raty stałej (wartość liczbowa w PLN)
 * totalValue - cała kwota zapłacona bankowi za kredyt (wartość liczbowa w PLN)
 * totalCostValue - całkowity koszt kredytu (wartość liczbowa w PLN)
+
 
 Jeśli wywołanie endpointu zawiera parametr email, na podany adres wysłane jest podsumowanie zapytania z obliczonymi wynikami kredytu
 
