@@ -24,24 +24,27 @@ otrzymuje w odpowiedzi:
 
 Jeśli wywołanie endpointu zawiera parametr email, na podany adres wysłane jest podsumowanie zapytania z obliczonymi wynikami kredytu
 
+### Hipo 2.0 - Hipotetyczny Kalkulator Kredytu Hipotecznego wersja 2
 W związku z rozwojem aplikacji, planowane jest wydanie wersji rozszerzonej, która posiada następujące wymagania biznesowo-techniczne:
 
 1. Parametry endpointu GET `/api/mortgage` powinny posiadać pewne ograniczenia:
-- minimalna kwota kredytu: 100000
-- maksymalna kwota kredytu 10000000
-- maksymalny poziom LTV: 90
-- minimalny okres kredytowania: 12 miesięcy
-- maksymalny okres kredytowania: 40 lat
-- maksymalny wiek kredytobiorcy w momencie spłaty ostatniej raty nie powinien przekraczać 70 lat
+
+* minimalna kwota kredytu: 100000
+* maksymalna kwota kredytu 10000000
+* maksymalny poziom LTV: 90
+* minimalny okres kredytowania: 12 miesięcy
+* maksymalny okres kredytowania: 40 lat
+* maksymalny wiek kredytobiorcy w momencie spłaty ostatniej raty nie powinien przekraczać 70 lat
 
 W odpowiedzi powinny być zwracane właściwe komunikaty błędów, statusu odpowiedzi 422 Unprocessable Content.
 Endpoint nie powinien zawierać wsparcia dla funkcji wysyłania emaila
 
 2. Wydzielenie funkcjonalności odpowiedzialnej za wysłanie emaila z podsumowaniem obliczeń poprzez utworzenie nowego endpointu 
-- wywołanie POST `/api/mortgage/email` z parametrami takimi samymi jak dla endpointu GET `/api/mortgage`
-- powinny być spełnione takie same warunki walidacji przesłanych parametrów 
-- dla pomyśnego wyniku, status odpowiedzi 202 Accepted
-- ze względów wydajności dobrze, by operacja wysłania emaila była asynchroniczna
+
+* wywołanie POST `/api/mortgage/email` z parametrami takimi samymi jak dla endpointu GET `/api/mortgage`
+* powinny być spełnione takie same warunki walidacji przesłanych parametrów 
+* dla pomyśnego wyniku, status odpowiedzi 202 Accepted
+* ze względów wydajności dobrze, by operacja wysłania emaila była asynchroniczna
 
 3. Rozbudowanie szablonu wysyłanego emaila o harmonogram spłaty rat stałych
 
