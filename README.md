@@ -1,48 +1,73 @@
-# Symfony Docker Compose
-Docker compose environment for Symfony (also works for Laravel or plain PHP) projects
+# ZADANIE  
 
-# Summary of what is included
-* PHP 8.2 with XDEBUG 3
-* Apache2
-* MySQL 8.0
-* RabbitMQ
-* Mailhog - local mailing server
-* Installs `composer` command
-* Virtualhost configuration dedicated for Symfony projects
+### Hipo - Hipotetyczny Kalkulator Kredytu Hipotecznego
+Aplikacja posiada pierwszą wersję funkcjonalności, jaką jest obliczenie wyników kredytu hipotecznego dla podanych parametrów.
 
-# How to install this in my project?
+Użytkownik, wywołując endpoint GET `/api/mortgage` z parametrami:
+* creditValue - wartość kredytu, (wartość liczbowa w PLN, pole wymagane)
+* secureValue - wartość zabezpieczenia, (wartość liczbowa w PLN, pole wymagane)
+* age - wiek kredytobiorcy (wartość liczbowa w latach, pole wymagane)
+* provision - prowizja dla banku za udzielenie kredytu, (wartość liczbowa w %, pole wymagane)
+* margin - oprocentowanie, (wartość liczbowa w %, pole wymagane)
+* period - okres kredytowania w miesiącach, (wartość liczbowa, pole wymagane)
+* email - pole opcjonalne, na który wysyłany jest email z obliczeniami
 
-* Download `.docker` folder and `docker-compose.yml` file and add them to your project (Skip `.github` and `public` folders)
-* Run `docker compose up` command from your terminal. [(Install docker compose)](https://docs.docker.com/compose/install/)
+otrzymuje w odpowiedzi:
+* initialCostValue - koszt początkowy (wartość liczbowa w PLN)
+* installmentValue - wysokość raty stałej (wartość liczbowa w PLN)
+* totalValue - cała kwota zapłacona bankowi za kredyt (wartość liczbowa w PLN)
+* totalCostValue - całkowity koszt kredytu (wartość liczbowa w PLN)
 
-# How to access everything?
+Jeśli wywołanie endpointu zawiera parametr email, na podany adres wysłane jest podsumowanie zapytania z obliczonymi wynikami kredytu
 
-By default you can access services via:
-* Access your project website via - http://localhost/
-* MySQL can be accessed via localhost:3306
-* PhpMyAdmin can be accessed via http://localhost:81
-* Mailhog can be accessed via http://localhost:8025/
-* Access docker apache-php terminal by writing - `docker exec -it project_web bash`
+W związku z rozwojem aplikacji, planowane jest wydanie wersji rozszerzonej, która posiada następujące wymagania biznesowo-techniczne:
 
-# Modifying .env file (If you are using Symfony)
+1. Parametry endpointu GET `/api/mortgage` powinny posiadać pewne ograniczenia:
+- minimalna kwota kredytu: 100000
+- maksymalna kwota kredytu 10000000
+- maksymalny poziom LTV: 90
+- minimalny okres kredytowania: 12 miesięcy
+- maksymalny okres kredytowania: 40 lat
+- maksymalny wiek kredytobiorcy w momencie spłaty ostatniej raty nie powinien przekraczać 70 lat
 
-If you use default IP addresses, append your `.env` file with the following:
+W odpowiedzi powinny być zwracane właściwe komunikaty błędów, statusu odpowiedzi 422 Unprocessable Content.
+Endpoint nie powinien zawierać wsparcia dla funkcji wysyłania emaila
 
-* For database connection -`DATABASE_URL=mysql://project:project@mysql:3306/project`
-* For mailing server - `MAILER_URL=mailhog:1025//randomemail@gmail.com:randompassword` (You can you any email and password)
+2. Wydzielenie funkcjonalności odpowiedzialnej za wysłanie emaila z podsumowaniem obliczeń poprzez utworzenie nowego endpointu 
+- wywołanie POST `/api/mortgage/email` z parametrami takimi samymi jak dla endpointu GET `/api/mortgage`
+- powinny być spełnione takie same warunki walidacji przesłanych parametrów 
+- dla pomyśnego wyniku, status odpowiedzi 202 Accepted
+- ze względów wydajności dobrze, by operacja wysłania emaila była asynchroniczna
 
-# MySQL
+3. Rozbudowanie szablonu wysyłanego emaila o harmonogram spłaty rat stałych
 
-* You can connect to your MySQL via `localhost:3306`
-* If you don't have any additional software, you can connect to database via phpmyadmin (http://localhost:81)
-* Username: `project`
-* Password: `project`
-* Default table is called `project`
+### Użyte technologie i narzędzia
+* PHP.8.2
+* Symfony 6.2
+* API Platform 3.0
+* Messenger i RabbitMQ
+* PHPUnit
+* PhpStan
+* CS Fixer
+* Mailhog
+* brick/math i math-php
 
-# Notes and common issues
+### Uruchomienie Aplikacji
+* uruchom projekt w dokerze (docker-compose up --build -d), jeśli potrzeba zainstaluj wszystkie potrzebne zależności wewnąrz kontenera php (docker-compose exec web bash)
+* po uruchomieniu projekt jest dostępny pod adresem: `http://localhost:8090/api`
+* projekt w dokerze zawiera developerski serwer smtp, UI pod adresem: `http://localhost:8025`
+* w repozytorium umieszczona jest kolekcja postmana z requestem do endpointu API
 
-* I use this configuration on `Windows 11` with `WSL 2`
-* You cannot use same `container_name` for multiple projects. Make sure to change them, or you can just delete that optional argument from `docker-compose.yml` file
-* You can't run multiple projects that allocate same ports on your localhost.
-* If you can't compose a new project, you might need to delete your old docker networks. Type `docker network ls` and then remove your old project network by writing `docker network rm NETWORK_ID` (for example `docker network rm 528d8c753c17`)
-* `cannot start service XXX: network YYY not found`. Open up container list with `docker container ls -a` and remove old containers with `docker container rm ID`.
+### Rozwiązanie zadania
+* powinno zawierać rozbudowaną (wg wymagań v2) i działającą aplikację
+* sklonuj repozytorium projektu i umieść we własnym git
+* utwórz branch na zadanie i tam koduj
+* utwórz PR i dołącz mnie jako recenzenta
+* termin na wysłanie rozwiązania - 7 dni od otrzymania zadania
+
+### Na co zwrócić uwagę
+* kod powinien spełniać standardy PSR-12
+* być otypowany i przechodzić testy analizy statycznej na 6 poziomie PHPStan
+* rozwiązanie zadania wymaga przeprowadzenia pewnego refaktoringu - pamietaj, by kod spełniał założenia Clean Code, był SOLID oraz DRY.
+* staraj się wykorzystać utworzone interfejsy i dto, nie krępuj się ich zmieniać i rozbudowywać.
+* testy, nawet jeśli nie dają pełnego pokrycia są lepsze niż ich brak :)
