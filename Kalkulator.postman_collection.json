@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "467ee215-6df8-4e9f-948c-54bfb4181573",
+		"name": "Kalkulator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Calculate Mortgage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/api/mortgage?creditValue=200000&secureValue=400000&age=34&provision=1&margin=8&period=240&email=maciej@fachowo.co",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"mortgage"
+					],
+					"query": [
+						{
+							"key": "creditValue",
+							"value": "200000"
+						},
+						{
+							"key": "secureValue",
+							"value": "400000"
+						},
+						{
+							"key": "age",
+							"value": "34"
+						},
+						{
+							"key": "provision",
+							"value": "1"
+						},
+						{
+							"key": "margin",
+							"value": "8"
+						},
+						{
+							"key": "period",
+							"value": "240"
+						},
+						{
+							"key": "email",
+							"value": "maciej@fachowo.co"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

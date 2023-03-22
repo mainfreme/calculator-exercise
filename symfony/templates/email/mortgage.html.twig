@@ -1,0 +1,28 @@
+<h1>Cześć {{ name }}</h1>
+<p>wartość kredytu: {{ creditValue }} PLN</p>
+<p>wartośź zabezpieczenia: {{ secureValue}} PLN</p>
+<p>oprocentowanie: {{ margin }} %</p>
+<p>prowizja: {{ provision }} %</p>
+<p>okres kredytowania: {{ (period/12)|round }} (lat)</p>
+<p>wiek kredytobiorcy: {{ age }} (lat)</p>
+<p>miesięczna rata: {{ installmentValue }} PLN</p>
+<p>koszt początkowy: {{ initialCostValue }} PLN</p>
+<p>koszt całkowity: {{ totalCostValue }} PLN</p>
+
+{#
+<h2>Raty</h2>
+<table>
+    <tr>
+        <th>Miesiąc</th>
+        <th>Część odsetkowa</th>
+        <th>Część kapitałowa</th>
+        <th>Rata</th>
+    </tr>
+    <tr>
+        <td>1.</td>
+        <td>200.00 PLN</td>
+        <td>500.00 PLN</td>
+        <td>700.00 PLN</td>
+    </tr>
+</table>
+#}
