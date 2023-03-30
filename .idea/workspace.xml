@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="66a11132-af01-49a6-a6cb-6fc94686714c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/calculator.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php-test-framework.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/symfony/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpServers">
+    <servers>
+      <server host="localhost" id="ae003d5a-064d-4287-9cc6-54320832aab4" name="localhost" port="8090" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$/public" remote-root="/var/www/html/public" />
+        </path_mappings>
+      </server>
+    </servers>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/symfony/vendor/composer" />
+      <path value="$PROJECT_DIR$/symfony/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/symfony/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/symfony/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/symfony/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/symfony/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/symfony/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/symfony/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/messenger" />
+      <path value="$PROJECT_DIR$/symfony/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/web-link" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/asset" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/security-core" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/security-http" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/expression-language" />
+      <path value="$PROJECT_DIR$/symfony/vendor/nelmio/cors-bundle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/serializer" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/flex" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/security-bundle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/symfony/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/password-hasher" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/security-csrf" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/doctrine-bridge" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/twig-bundle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/symfony/vendor/api-platform/core" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/runtime" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/doctrine-migrations-bundle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/symfony/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/symfony/vendor/psr/link" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/symfony/vendor/willdurand/negotiation" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/symfony/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/symfony/vendor/markrogoyski/math-php" />
+      <path value="$PROJECT_DIR$/symfony/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/mailer" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/symfony/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/symfony/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/symfony/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/symfony/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/symfony/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/symfony/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/symfony/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/symfony/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/symfony/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/symfony/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/symfony/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/symfony/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/symfony/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/symfony/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/symfony/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/symfony/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/symfony/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/symfony/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/symfony/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/symfony/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/symfony/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/symfony/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/symfony/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/symfony/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/symfony/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/symfony/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/symfony/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/symfony/vendor/masterminds/html5" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/http-client" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/symfony/vendor/phpstan/phpstan" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/symfony/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/symfony/vendor/friendsofphp/php-cs-fixer" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="2NHq1qAXwhvUkW1vQg5x6NfGrHu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm&quot;: &quot;Docker Compose&quot;,
+    &quot;credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm&quot;: &quot;Docker Compose&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/maco/projects/speedfin/calculator/symfony/config/packages&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php.debug&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/symfony/config/packages" />
+      <recent name="$PROJECT_DIR$/symfony/src/Service/Installment/Dto" />
+      <recent name="$PROJECT_DIR$/symfony/src/Messenger" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/symfony/tests/Api" />
+      <recent name="$PROJECT_DIR$/symfony/src/ApiRequest" />
+      <recent name="$PROJECT_DIR$/symfony/src/ApiProvider" />
+      <recent name="$PROJECT_DIR$/symfony/templates/email" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHPUnit.MortgageTest.testGetMortgageSuccessfully (2)">
+    <configuration name="MortgageTest (1)" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine pass_parent_envs="false">
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="web" />
+        </PhpTestInterpreterSettings>
+        <envs>
+          <env name="env" value="test" />
+        </envs>
+      </CommandLine>
+      <TestRunner class="App\Tests\MortgageTest" file="$PROJECT_DIR$/symfony/tests/Api/MortgageTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MortgageTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="web" />
+        </PhpTestInterpreterSettings>
+        <envs>
+          <env name="env" value="test" />
+        </envs>
+      </CommandLine>
+      <TestRunner class="MortgageTest" coverage_engine="PHPDBG" file="$PROJECT_DIR$/symfony/tests/Api/MortgageTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MortgageTest.testGetMortgageSuccessfully (1)" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="web" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="MortgageTest" file="$PROJECT_DIR$/symfony/tests/Api/MortgageTest.php" method="testGetMortgageSuccessfully" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MortgageTest.testGetMortgageSuccessfully (2)" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="web" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="App\Tests\MortgageTest" file="$PROJECT_DIR$/symfony/tests/Api/MortgageTest.php" method="testGetMortgageSuccessfully" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MortgageTest.testGetMortgageSuccessfully" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="web" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="MortgageTest" file="$PROJECT_DIR$/symfony/tests/Api/MortgageTest.php" method="testGetMortgageSuccessfully" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="PHPUnit.MortgageTest (1)" />
+      <item itemvalue="PHPUnit.MortgageTest.testGetMortgageSuccessfully (1)" />
+      <item itemvalue="PHPUnit.MortgageTest.testGetMortgageSuccessfully (2)" />
+      <item itemvalue="PHPUnit.MortgageTest" />
+      <item itemvalue="PHPUnit.MortgageTest.testGetMortgageSuccessfully" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.MortgageTest.testGetMortgageSuccessfully (2)" />
+        <item itemvalue="PHPUnit.MortgageTest (1)" />
+        <item itemvalue="PHPUnit.MortgageTest.testGetMortgageSuccessfully (1)" />
+        <item itemvalue="PHPUnit.MortgageTest" />
+        <item itemvalue="PHPUnit.MortgageTest.testGetMortgageSuccessfully" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="66a11132-af01-49a6-a6cb-6fc94686714c" name="Changes" comment="" />
+      <created>1679331142890</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1679331142890</updated>
+      <workItem from="1679331144246" duration="11298000" />
+      <workItem from="1679386098059" duration="23690000" />
+      <workItem from="1679478465837" duration="10135000" />
+      <workItem from="1679660564417" duration="647000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/symfony/src/ApiProvider/MortgageProvider.php</url>
+          <line>66</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
