@@ -9,5 +9,6 @@ class SchedulerDto
         public readonly ?float $provision = null,
         public readonly ?float $margin = null,
         public readonly ?int $period = null
-    ){}
+    ) {
+    }
 }

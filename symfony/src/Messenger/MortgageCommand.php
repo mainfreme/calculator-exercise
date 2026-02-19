@@ -2,7 +2,6 @@
 
 namespace App\Messenger;
 
-
 class MortgageCommand
 {
     public function __construct(
@@ -10,6 +9,6 @@ class MortgageCommand
         public readonly ?int $secureValue = null,
         public readonly ?int $period = null,
         public readonly ?int $age = null
-    )
-    {}
+    ) {
+    }
 }

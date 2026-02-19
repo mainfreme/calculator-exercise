@@ -17,7 +17,7 @@ class MortgageTest extends ApiTestCase
      */
     public function testGetMortgageSuccessfully(array $filters, array $results)
     {
-        static::createClient()->request('GET', '/api/mortgage?' . http_build_query($filters));
+        static::createClient()->request('GET', '/api/mortgage?'.http_build_query($filters));
 
         $this->assertResponseIsSuccessful();
         $this->assertJsonContains($results);
@@ -28,10 +28,10 @@ class MortgageTest extends ApiTestCase
      */
     public function testGetMortgageWhenMissingFilterFailure(array $filters, array $results)
     {
-        static::createClient()->request('GET', '/api/mortgage?' . http_build_query($filters));
+        static::createClient()->request('GET', '/api/mortgage?'.http_build_query($filters));
         $this->assertResponseIsUnprocessable();
         $this->assertJsonContains(['violations' => [
-            $results
+            $results,
         ]], false);
     }
 
@@ -45,15 +45,15 @@ class MortgageTest extends ApiTestCase
                     'age' => 35,
                     'provision' => 1,
                     'margin' => 2.5,
-                    'period' => 240
+                    'period' => 240,
                 ],
                 [
-                    'initialCostValue' => "2100.00",
-                    'totalCostValue' => "59171.06",
-                    'installmentValue' => "1112.80",
-                    'totalValue' => "269171.06"
-                ]
-            ]
+                    'initialCostValue' => '2100.00',
+                    'totalCostValue' => '59171.06',
+                    'installmentValue' => '1112.80',
+                    'totalValue' => '269171.06',
+                ],
+            ],
         ];
     }
 
@@ -66,12 +66,12 @@ class MortgageTest extends ApiTestCase
                     'age' => 35,
                     'provision' => 1,
                     'margin' => 2.5,
-                    'period' => 240
+                    'period' => 240,
                 ],
                 [
-                    'propertyPath' => "creditValue",
-                    'message' => "This value should not be blank."
-                ]
+                    'propertyPath' => 'creditValue',
+                    'message' => 'This value should not be blank.',
+                ],
             ],
             [
                 [
@@ -79,12 +79,12 @@ class MortgageTest extends ApiTestCase
                     'age' => 35,
                     'provision' => 1,
                     'margin' => 2.5,
-                    'period' => 240
+                    'period' => 240,
                 ],
                 [
-                    'propertyPath' => "secureValue",
-                    'message' => "This value should not be blank."
-                ]
+                    'propertyPath' => 'secureValue',
+                    'message' => 'This value should not be blank.',
+                ],
             ],
             [
                 [
@@ -92,12 +92,12 @@ class MortgageTest extends ApiTestCase
                     'creditValue' => 350000,
                     'provision' => 1,
                     'margin' => 2.5,
-                    'period' => 240
+                    'period' => 240,
                 ],
                 [
-                    'propertyPath' => "age",
-                    'message' => "This value should not be blank."
-                ]
+                    'propertyPath' => 'age',
+                    'message' => 'This value should not be blank.',
+                ],
             ],
             [
                 [
@@ -105,12 +105,12 @@ class MortgageTest extends ApiTestCase
                     'age' => 35,
                     'creditValue' => 300000,
                     'margin' => 2.5,
-                    'period' => 240
+                    'period' => 240,
                 ],
                 [
-                    'propertyPath' => "provision",
-                    'message' => "This value should not be blank."
-                ]
+                    'propertyPath' => 'provision',
+                    'message' => 'This value should not be blank.',
+                ],
             ],
             [
                 [
@@ -118,12 +118,12 @@ class MortgageTest extends ApiTestCase
                     'age' => 35,
                     'provision' => 1,
                     'creditValue' => 250000,
-                    'period' => 240
+                    'period' => 240,
                 ],
                 [
-                    'propertyPath' => "margin",
-                    'message' => "This value should not be blank."
-                ]
+                    'propertyPath' => 'margin',
+                    'message' => 'This value should not be blank.',
+                ],
             ],
             [
                 [
@@ -131,13 +131,13 @@ class MortgageTest extends ApiTestCase
                     'age' => 35,
                     'provision' => 1,
                     'margin' => 2.5,
-                    'creditValue' => 240000
+                    'creditValue' => 240000,
                 ],
                 [
-                    'propertyPath' => "period",
-                    'message' => "This value should not be blank."
-                ]
-            ]
+                    'propertyPath' => 'period',
+                    'message' => 'This value should not be blank.',
+                ],
+            ],
         ];
     }
 }

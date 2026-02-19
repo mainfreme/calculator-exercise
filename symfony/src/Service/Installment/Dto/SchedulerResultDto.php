@@ -9,5 +9,6 @@ class SchedulerResultDto
         public readonly ?float $capital = null,
         public readonly ?float $interest = null,
         public readonly ?float $total = null
-    ){}
+    ) {
+    }
 }

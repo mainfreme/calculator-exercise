@@ -22,6 +22,6 @@ class MortgageRequest
         #[Assert\NotBlank]
         public readonly ?int $age = null,
         public readonly ?string $email = null
-    )
-    {}
+    ) {
+    }
 }
