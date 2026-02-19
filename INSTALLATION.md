@@ -18,7 +18,7 @@ Docker compose environment for Symfony (also works for Laravel or plain PHP) pro
 # How to access everything?
 
 By default you can access services via:
-* Access your project website via - http://localhost/
+* Access your project website via - http://localhost:8090
 * MySQL can be accessed via localhost:3306
 * PhpMyAdmin can be accessed via http://localhost:81
 * Mailhog can be accessed via http://localhost:8025/
