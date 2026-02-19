@@ -7,6 +7,7 @@ use App\Validator\Constraint\AgeAtLastInstallment;
 use App\Validator\Constraint\Ltv;
 use Symfony\Component\Validator\Constraints as Assert;
 
+#[AgeAtLastInstallment]
 class MortgageV2Request
 {
     public function __construct(
@@ -26,9 +27,13 @@ class MortgageV2Request
             max: MortgageValidationService::MAX_PERIOD_MONTHS,
             notInRangeMessage: 'Okres kredytowania musi być między {{ min }} a {{ max }} miesięcy.'
         )]
-        #[AgeAtLastInstallment]
+        #[Assert\NotBlank]
         public readonly ?int $period = null,
         #[Assert\NotBlank]
-        public readonly ?int $age = null
+        public readonly ?int $age = null,
+        #[Assert\NotBlank]
+        public readonly ?float $margin = null,
+        #[Assert\NotBlank]
+        public readonly ?float $provision = null
     ) {}
 }

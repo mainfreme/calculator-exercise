@@ -2,6 +2,7 @@
 
 namespace App\ApiRequest;
 
+use App\Validator\Constraint\AgeAtLastInstallment;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class MortgageRequest
@@ -16,6 +17,7 @@ class MortgageRequest
         #[Assert\NotBlank]
         public readonly ?float $margin = null,
         #[Assert\NotBlank]
+        #[AgeAtLastInstallment]
         public readonly ?int $period = null,
         #[Assert\NotBlank]
         public readonly ?int $age = null,
