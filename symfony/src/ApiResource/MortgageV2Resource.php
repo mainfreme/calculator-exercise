@@ -6,8 +6,8 @@ use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\Get;
 use ApiPlatform\OpenApi\Model\Operation as OpenApiOperation;
 use ApiPlatform\OpenApi\Model\Parameter as OpenApiParameter;
-use App\ApiRequest\MortgageV2Request;
 use App\ApiProvider\MortgageProvider;
+use App\ApiRequest\MortgageV2Request;
 use App\Service\Mortgage\MortgageValidationService;
 use Brick\Math\BigDecimal;
 
@@ -88,7 +88,7 @@ use Brick\Math\BigDecimal;
                     ),
                 ]
             )
-        )
+        ),
     ],
     formats: ['json']
 )]
@@ -99,6 +99,6 @@ class MortgageV2Resource
         public readonly ?BigDecimal $totalValue = null,
         public readonly ?BigDecimal $totalCostValue = null,
         public readonly ?BigDecimal $installmentValue = null
-    )
-    {}
+    ) {
+    }
 }

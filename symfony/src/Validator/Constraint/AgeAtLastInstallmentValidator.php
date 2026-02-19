@@ -21,7 +21,7 @@ class AgeAtLastInstallmentValidator extends ConstraintValidator
         }
 
         $object = $this->context->getObject();
-        if ($object->age === null || $object->period === null) {
+        if (null === $object->age || null === $object->period) {
             return;
         }
 
@@ -30,7 +30,7 @@ class AgeAtLastInstallmentValidator extends ConstraintValidator
             (int) $object->period
         );
 
-        if ($message !== null) {
+        if (null !== $message) {
             $this->context->buildViolation($message)
                 ->atPath('')
                 ->addViolation();

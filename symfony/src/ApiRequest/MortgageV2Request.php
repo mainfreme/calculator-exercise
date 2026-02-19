@@ -35,5 +35,6 @@ class MortgageV2Request
         public readonly ?float $margin = null,
         #[Assert\NotBlank]
         public readonly ?float $provision = null
-    ) {}
+    ) {
+    }
 }

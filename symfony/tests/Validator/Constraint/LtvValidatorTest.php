@@ -29,7 +29,7 @@ class LtvValidatorTest extends KernelTestCase
 
         $ltvViolations = array_filter(
             iterator_to_array($violations),
-            fn ($v) => $v->getPropertyPath() === 'creditValue' && str_contains($v->getMessage(), 'LTV')
+            fn ($v) => 'creditValue' === $v->getPropertyPath() && str_contains($v->getMessage(), 'LTV')
         );
 
         $this->assertCount(0, $ltvViolations, 'LTV 80% (400k/500k) powinno być poprawne');
@@ -48,7 +48,7 @@ class LtvValidatorTest extends KernelTestCase
 
         $ltvViolations = array_filter(
             iterator_to_array($violations),
-            fn ($v) => $v->getPropertyPath() === 'creditValue' && str_contains($v->getMessage(), 'LTV')
+            fn ($v) => 'creditValue' === $v->getPropertyPath() && str_contains($v->getMessage(), 'LTV')
         );
 
         $this->assertCount(0, $ltvViolations, 'LTV 90% (450k/500k) - maksymalna dopuszczalna wartość');
@@ -67,7 +67,7 @@ class LtvValidatorTest extends KernelTestCase
 
         $ltvViolations = array_filter(
             iterator_to_array($violations),
-            fn ($v) => $v->getPropertyPath() === 'creditValue' && str_contains($v->getMessage(), 'LTV')
+            fn ($v) => 'creditValue' === $v->getPropertyPath() && str_contains($v->getMessage(), 'LTV')
         );
 
         $this->assertCount(1, $ltvViolations, 'LTV 100% (500k/500k) powinno zwrócić błąd walidacji');

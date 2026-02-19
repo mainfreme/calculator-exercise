@@ -29,7 +29,7 @@ class AgeAtLastInstallmentValidatorTest extends KernelTestCase
 
         $ageViolations = array_filter(
             iterator_to_array($violations),
-            fn ($v) => $v->getPropertyPath() === 'period' && str_contains($v->getMessage(), 'Wiek kredytobiorcy')
+            fn ($v) => 'period' === $v->getPropertyPath() && str_contains($v->getMessage(), 'Wiek kredytobiorcy')
         );
 
         $this->assertCount(0, $ageViolations, 'Wiek 35 + 20 lat = 55 lat - poniżej limitu 70');
@@ -48,7 +48,7 @@ class AgeAtLastInstallmentValidatorTest extends KernelTestCase
 
         $ageViolations = array_filter(
             iterator_to_array($violations),
-            fn ($v) => $v->getPropertyPath() === 'period' && str_contains($v->getMessage(), 'Wiek kredytobiorcy')
+            fn ($v) => 'period' === $v->getPropertyPath() && str_contains($v->getMessage(), 'Wiek kredytobiorcy')
         );
 
         $this->assertCount(0, $ageViolations, 'Wiek 65 + 5 lat = 70 lat - dokładnie na limicie');
@@ -67,7 +67,7 @@ class AgeAtLastInstallmentValidatorTest extends KernelTestCase
 
         $ageViolations = array_filter(
             iterator_to_array($violations),
-            fn ($v) => $v->getPropertyPath() === 'period' && str_contains($v->getMessage(), 'Wiek kredytobiorcy')
+            fn ($v) => 'period' === $v->getPropertyPath() && str_contains($v->getMessage(), 'Wiek kredytobiorcy')
         );
 
         $this->assertCount(1, $ageViolations, 'Wiek 65 + 10 lat = 75 lat - powyżej limitu 70');

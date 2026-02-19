@@ -21,7 +21,7 @@ class LtvValidator extends ConstraintValidator
         }
 
         $object = $this->context->getObject();
-        if ($object->creditValue === null || $object->secureValue === null) {
+        if (null === $object->creditValue || null === $object->secureValue) {
             return;
         }
 
@@ -30,7 +30,7 @@ class LtvValidator extends ConstraintValidator
             (int) $object->secureValue
         );
 
-        if ($message !== null) {
+        if (null !== $message) {
             $this->context->buildViolation($message)
                 ->atPath('')
                 ->addViolation();
