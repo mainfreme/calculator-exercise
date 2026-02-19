@@ -6,6 +6,7 @@ use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\Get;
 use ApiPlatform\OpenApi\Model\Operation as OpenApiOperation;
 use ApiPlatform\OpenApi\Model\Parameter as OpenApiParameter;
+use ApiPlatform\OpenApi\Model\Response as OpenApiResponse;
 use App\ApiProvider\MortgageProvider;
 use App\ApiRequest\MortgageV2Request;
 use App\Service\Mortgage\MortgageValidationService;
@@ -22,6 +23,9 @@ use Brick\Math\BigDecimal;
             input: MortgageV2Request::class,
             output: MortgageV2Resource::class,
             provider: MortgageProvider::class,
+            exceptionToStatus: [
+                \ApiPlatform\Validator\Exception\ValidationException::class => 422,
+            ],
             openapi: new OpenApiOperation(
                 parameters: [
                     new OpenApiParameter(
@@ -85,6 +89,11 @@ use Brick\Math\BigDecimal;
                         false,
                         false,
                         ['type' => 'number', 'format' => 'float']
+                    ),
+                ],
+                responses: [
+                    '422' => new OpenApiResponse(
+                        'Niezgodność danych wejściowych z regułami walidacji. Zwraca listę błędów.'
                     ),
                 ]
             )
