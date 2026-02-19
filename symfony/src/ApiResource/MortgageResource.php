@@ -4,10 +4,8 @@ namespace App\ApiResource;
 
 use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\Get;
-use App\Controller\MortgageCalculator;
-use App\ApiRequest\MortgageRequest;
-use App\Messenger\MortgageCommand;
 use App\ApiProvider\MortgageProvider;
+use App\ApiRequest\MortgageRequest;
 use Brick\Math\BigDecimal;
 
 #[ApiResource(
@@ -20,7 +18,7 @@ use Brick\Math\BigDecimal;
             input: MortgageRequest::class,
             output: MortgageResource::class,
             provider: MortgageProvider::class
-        )
+        ),
     ],
     formats: ['json']
 )]
@@ -31,6 +29,6 @@ class MortgageResource
         public readonly ?BigDecimal $totalValue = null,
         public readonly ?BigDecimal $totalCostValue = null,
         public readonly ?BigDecimal $installmentValue = null
-    )
-    {}
+    ) {
+    }
 }

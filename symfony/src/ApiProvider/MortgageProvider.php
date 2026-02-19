@@ -2,16 +2,13 @@
 
 namespace App\ApiProvider;
 
-use ApiPlatform\Exception\FilterValidationException;
 use ApiPlatform\Exception\InvalidUriVariableException;
 use ApiPlatform\Metadata\Operation;
-use ApiPlatform\State\Pagination;
 use ApiPlatform\State\ProviderInterface;
-use ApiPlatform\Symfony\Validator\Validator;
 use ApiPlatform\Validator\ValidatorInterface;
-use App\ApiResource\MortgageResource;
 use App\ApiRequest\MortgageRequest;
 use App\ApiRequest\MortgageV2Request;
+use App\ApiResource\MortgageResource;
 use App\Service\Installment\DummyInstallment;
 use App\Service\Mortgage\MortgageCalculator;
 use Brick\Math\BigDecimal;
@@ -21,11 +18,9 @@ use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\BodyRendererInterface;
-use Symfony\Component\Validator\Validation;
 
 class MortgageProvider implements ProviderInterface
 {
-
     public ValidatorInterface $validation;
     private MortgageCalculator $mortgageCalculator;
     private MailerInterface $mailer;
@@ -88,7 +83,7 @@ class MortgageProvider implements ProviderInterface
             )->toScale(2, RoundingMode::HALF_UP)
         );
 
-        if ($request->email != null) {
+        if (null != $request->email) {
             $this->sendMail($request->email, [
                 'creditValue' => $request->creditValue,
                 'period' => $request->period,
@@ -99,7 +94,7 @@ class MortgageProvider implements ProviderInterface
                 'name' => $request->email,
                 'initialCostValue' => $mortgageResource->initialCostValue,
                 'totalCostValue' => $mortgageResource->totalCostValue,
-                'installmentValue' => $mortgageResource->installmentValue
+                'installmentValue' => $mortgageResource->installmentValue,
             ]);
         }
 
@@ -110,10 +105,10 @@ class MortgageProvider implements ProviderInterface
     {
         try {
             $email = (new TemplatedEmail())
-                ->subject("Szczegóły kredytu hipotecznego")
+                ->subject('Szczegóły kredytu hipotecznego')
                 ->to($emailTo)
-                ->from("mail@speedfin.pl")
-                ->sender("mail@speedfin.pl")
+                ->from('mail@speedfin.pl')
+                ->sender('mail@speedfin.pl')
                 ->htmlTemplate('email/mortgage.html.twig')
                 ->context($params);
             $this->bodyRenderer->render($email);
