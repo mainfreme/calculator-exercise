@@ -11,6 +11,7 @@ use ApiPlatform\Symfony\Validator\Validator;
 use ApiPlatform\Validator\ValidatorInterface;
 use App\ApiResource\MortgageResource;
 use App\ApiRequest\MortgageRequest;
+use App\ApiRequest\MortgageV2Request;
 use App\Service\Installment\DummyInstallment;
 use App\Service\Mortgage\MortgageCalculator;
 use Brick\Math\BigDecimal;
@@ -49,8 +50,14 @@ class MortgageProvider implements ProviderInterface
      */
     public function provide(Operation $operation, array $uriVariables = [], array $context = []): MortgageResource
     {
+        $filters = $context['filters'] ?? [];
+        $input = $operation->getInput();
+        $isV2 = \is_array($input) && ($input['class'] ?? null) === MortgageV2Request::class;
+
         try {
-            $request = new MortgageRequest(...$context['filters'] ?? []);
+            $request = $isV2
+                ? new MortgageV2Request(...$filters)
+                : new MortgageRequest(...$filters);
         } catch (\InvalidArgumentException $exception) {
             throw new InvalidUriVariableException();
         }
