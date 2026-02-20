@@ -32,7 +32,7 @@ class AgeAtLastInstallmentValidator extends ConstraintValidator
 
         if (null !== $message) {
             $this->context->buildViolation($message)
-                ->atPath('')
+                ->atPath('period')
                 ->addViolation();
         }
     }

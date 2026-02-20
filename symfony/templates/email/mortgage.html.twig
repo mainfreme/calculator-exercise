@@ -9,20 +9,38 @@
 <p>koszt początkowy: {{ initialCostValue }} PLN</p>
 <p>koszt całkowity: {{ totalCostValue }} PLN</p>
 
-{#
+
+{% set startYear = 2026 %}
+{% set lastDisplayedYear = 0 %}
+
 <h2>Raty</h2>
+
 <table>
-    <tr>
-        <th>Miesiąc</th>
-        <th>Część odsetkowa</th>
-        <th>Część kapitałowa</th>
-        <th>Rata</th>
-    </tr>
-    <tr>
-        <td>1.</td>
-        <td>200.00 PLN</td>
-        <td>500.00 PLN</td>
-        <td>700.00 PLN</td>
-    </tr>
+    <thead>
+        <tr>
+            <th>Miesiąc</th>
+            <th>Część odsetkowa</th>
+            <th>Część kapitałowa</th>
+            <th>Rata</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in array %}
+            {% set currentYear = startYear + ((item.month - 1) // 12) %}
+
+            {% if currentYear != lastDisplayedYear %}
+                <tr>
+                    <td colspan="4"><strong>{{ currentYear }}</strong></td>
+                </tr>
+                {% set lastDisplayedYear = currentYear %}
+            {% endif %}
+
+            <tr>
+                <td>{{ item.month }}.</td>
+                <td>{{ item.interestValue|number_format(2, '.', ' ') }} PLN</td>
+                <td>{{ item.capitalValue|number_format(2, '.', ' ') }} PLN</td>
+                <td>{{ item.totalValue|number_format(2, '.', ' ') }} PLN</td>
+            </tr>
+        {% endfor %}
+    </tbody>
 </table>
-#}

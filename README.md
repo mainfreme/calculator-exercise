@@ -65,6 +65,14 @@ Endpoint nie powinien zawierać wsparcia dla funkcji wysyłania emaila
 * projekt w dokerze zawiera developerski serwer smtp, UI pod adresem: `http://localhost:8025`
 * w repozytorium umieszczona jest kolekcja postmana z requestem do endpointu API
 
+### Kolejka wysyłki emaili (Messenger)
+* Wysyłka maili jest asynchroniczna – żądanie HTTP zwraca 202 Accepted bez czekania na wysłanie
+* Worker konsumuje wiadomości z kolejki (w kontenerze): `docker-compose exec web php bin/console messenger:consume async -vv`
+* Setup transportów (po `composer install`): `docker-compose exec web php bin/console messenger:setup-transports`
+* Domyślny transport: Doctrine (tabela w bazie). RabbitMQ: ustaw `MESSENGER_TRANSPORT_DSN=amqp://guest:guest@rabbitmq:5672/%2f/messages` w `.env`
+* Retry: 3 próby przy błędach transportu (np. timeout SMTP), opóźnienie 1s × 2^n
+* Nieudane wiadomości trafiają do `failed` – podgląd: `docker-compose exec web php bin/console messenger:failed:show`
+
 ### Rozwiązanie zadania
 * powinno zawierać rozbudowaną (wg wymagań v2) i działającą aplikację
 * sklonuj repozytorium projektu i umieść we własnym git
