@@ -21,23 +21,14 @@ use Symfony\Component\Mime\BodyRendererInterface;
 
 class MortgageProvider implements ProviderInterface
 {
-    public ValidatorInterface $validation;
-    private MortgageCalculator $mortgageCalculator;
-    private MailerInterface $mailer;
-    private BodyRendererInterface $bodyRenderer;
 
     public function __construct(
-        ValidatorInterface $validation,
-        MortgageCalculator $mortgageCalculator,
-        DummyInstallment $installment,
-        MailerInterface $mailer, BodyRendererInterface $bodyRenderer
-    ) {
-        $this->validation = $validation;
-        $this->installment = $installment;
-        $this->mortgageCalculator = $mortgageCalculator;
-        $this->mailer = $mailer;
-        $this->bodyRenderer = $bodyRenderer;
-    }
+        public ValidatorInterface $validation,
+        private MortgageCalculator $mortgageCalculator,
+        public DummyInstallment $installment,
+        private MailerInterface $mailer,
+        private BodyRendererInterface $bodyRenderer,
+    ) {}
 
     /**
      * @throws InvalidUriVariableException
@@ -83,39 +74,39 @@ class MortgageProvider implements ProviderInterface
             )->toScale(2, RoundingMode::HALF_UP)
         );
 
-        if (null != $request->email) {
-            $this->sendMail($request->email, [
-                'creditValue' => $request->creditValue,
-                'period' => $request->period,
-                'margin' => $request->margin,
-                'provision' => $request->provision,
-                'age' => $request->age,
-                'secureValue' => $request->secureValue,
-                'name' => $request->email,
-                'initialCostValue' => $mortgageResource->initialCostValue,
-                'totalCostValue' => $mortgageResource->totalCostValue,
-                'installmentValue' => $mortgageResource->installmentValue,
-            ]);
-        }
+        // if (null != $request->email) {
+        //     $this->sendMail($request->email, [
+        //         'creditValue' => $request->creditValue,
+        //         'period' => $request->period,
+        //         'margin' => $request->margin,
+        //         'provision' => $request->provision,
+        //         'age' => $request->age,
+        //         'secureValue' => $request->secureValue,
+        //         'name' => $request->email,
+        //         'initialCostValue' => $mortgageResource->initialCostValue,
+        //         'totalCostValue' => $mortgageResource->totalCostValue,
+        //         'installmentValue' => $mortgageResource->installmentValue,
+        //     ]);
+        // }
 
         return $mortgageResource;
     }
 
-    public function sendMail(string $emailTo, array $params = [])
-    {
-        try {
-            $email = (new TemplatedEmail())
-                ->subject('Szczegóły kredytu hipotecznego')
-                ->to($emailTo)
-                ->from('mail@speedfin.pl')
-                ->sender('mail@speedfin.pl')
-                ->htmlTemplate('email/mortgage.html.twig')
-                ->context($params);
-            $this->bodyRenderer->render($email);
+    // public function sendMail(string $emailTo, array $params = [])
+    // {
+    //     try {
+    //         $email = (new TemplatedEmail())
+    //             ->subject('Szczegóły kredytu hipotecznego')
+    //             ->to($emailTo)
+    //             ->from('mail@speedfin.pl')
+    //             ->sender('mail@speedfin.pl')
+    //             ->htmlTemplate('email/mortgage.html.twig')
+    //             ->context($params);
+    //         $this->bodyRenderer->render($email);
 
-            $this->mailer->send($email);
-        } catch (TransportExceptionInterface $exception) {
-            // @todo it would be good to log somehow that email failed
-        }
-    }
+    //         $this->mailer->send($email);
+    //     } catch (TransportExceptionInterface $exception) {
+    //         // @todo it would be good to log somehow that email failed
+    //     }
+    // }
 }
