@@ -8,7 +8,8 @@ class SchedulerDto
         public readonly ?int $creditValue = null,
         public readonly ?float $provision = null,
         public readonly ?float $margin = null,
-        public readonly ?int $period = null
+        public readonly ?int $period = null,
+        public readonly bool $fullSchedule = false,
     ) {
     }
 }
